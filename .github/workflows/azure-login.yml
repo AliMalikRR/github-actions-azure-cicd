@@ -1,18 +1,32 @@
-name: Test
+name: Terraform Pipeline
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
 
-  test:
+  terraform:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Hello
-        run: echo "Pipeline works"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Show Date
-        run: date
+      - name: Terraform Format Check
+        run: echo "terraform fmt would run here"
+
+      - name: Terraform Validate
+        run: echo "terraform validate would run here"
+
+      - name: Terraform Plan
+        run: echo "terraform plan would run here"
+
+      - name: Manual Approval
+        run: echo "manual approval would happen here"
+
+      - name: Terraform Apply
+        run: echo "terraform apply would run here"
