@@ -1,28 +1,18 @@
-name: My First Pipeline
+name: Test
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
+
   test:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Print Message
-        run: echo "GitHub Actions is working"
+      - name: Hello
+        run: echo "Pipeline works"
 
       - name: Show Date
         run: date
-
-      - name: Show Current Directory
-        run: pwd
-
-      - name: List Files
-        run: ls -la
